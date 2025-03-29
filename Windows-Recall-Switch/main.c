@@ -209,9 +209,9 @@ void enable() {
     CloseHandle(pi.hThread);
     puts("");
     puts("Windows Recall Status:");
-    puts("-----------------------------");
+    puts("-------------------------------");
     GetWindowsRecallStatus();
-    puts("-----------------------------");
+    puts("-------------------------------");
     puts("");
     reboot();
 }
@@ -244,9 +244,9 @@ void disable() {
     CloseHandle(pi.hThread);
     puts("");
     puts("Windows Recall Status:");
-    puts("-----------------------------");
+    puts("-------------------------------");
     GetWindowsRecallStatus();
-    puts("-----------------------------");
+    puts("-------------------------------");
     puts("");
     reboot();
 }
@@ -368,9 +368,9 @@ int main() {
         GetWindowsVersion();
         puts("");
         puts("Windows Recall Status:");
-        puts("-----------------------------");
+        puts("-------------------------------");
         GetWindowsRecallStatus();
-        puts("-----------------------------");
+        puts("-------------------------------");
         puts("");
         puts("  1 - Enable Windows Recall");
         puts("  2 - Disable Windows Recall");
