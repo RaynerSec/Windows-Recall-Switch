@@ -60,4 +60,3 @@ winget upgrade --id RaynerSec.Windows-Recall-Switch -e
 
 ## Special Thanks
 - Thanks To [Advanced Installer](https://www.advancedinstaller.com) For Providing A Professional License For Free For This Project.
-- Thanks To [Han-soft](https://www.han-soft.com) For Providing [UninsHs](https://www.han-soft.com/uninshs.php) For Free For This Project.
