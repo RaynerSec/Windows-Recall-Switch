@@ -109,11 +109,29 @@ void GetWindowsRecallStatus() {
     // Start The Child Process
     if (!CreateProcess(L"C:\\Windows\\System32\\dism.exe", L"C:\\Windows\\System32\\dism.exe /online /get-featureinfo /featurename:recall", NULL, NULL, TRUE, 0, NULL, NULL, &si, &pi))
     {
-        if (!CreateProcess(L"C:\\Windows\\Sysnative\\dism.exe", L"C:\\Windows\\Sysnative\\dism.exe /online /get-featureinfo /featurename:recall", NULL, NULL, TRUE, 0, NULL, NULL, &si, &pi))
+        if (!CreateProcess(L"C:\\Windows\\SysWOW64\\dism.exe", L"C:\\Windows\\SysWOW64\\dism.exe /online /get-featureinfo /featurename:recall", NULL, NULL, TRUE, 0, NULL, NULL, &si, &pi))
         {
-            puts("Error: CreateProcess Failed!");
-            printf("Error Code: %d\n", GetLastError());
-            return;
+            if (!CreateProcess(L"C:\\Windows\\SysArm32\\dism.exe", L"C:\\Windows\\SysArm32\\dism.exe /online /get-featureinfo /featurename:recall", NULL, NULL, TRUE, 0, NULL, NULL, &si, &pi))
+            {
+                if (!CreateProcess(L"C:\\Windows\\SysX8664\\dism.exe", L"C:\\Windows\\SysX8664\\dism.exe /online /get-featureinfo /featurename:recall", NULL, NULL, TRUE, 0, NULL, NULL, &si, &pi))
+                {
+                    if (!CreateProcess(L"C:\\Windows\\SysArm64\\dism.exe", L"C:\\Windows\\SysArm64\\dism.exe /online /get-featureinfo /featurename:recall", NULL, NULL, TRUE, 0, NULL, NULL, &si, &pi))
+                    {
+                        if (!CreateProcess(L"C:\\Windows\\SyChpe32\\dism.exe", L"C:\\Windows\\SyChpe32\\dism.exe /online /get-featureinfo /featurename:recall", NULL, NULL, TRUE, 0, NULL, NULL, &si, &pi))
+                        {
+                            if (!CreateProcess(L"C:\\Windows\\SyChpe64\\dism.exe", L"C:\\Windows\\SyChpe64\\dism.exe /online /get-featureinfo /featurename:recall", NULL, NULL, TRUE, 0, NULL, NULL, &si, &pi))
+                            {
+                                if (!CreateProcess(L"C:\\Windows\\Sysnative\\dism.exe", L"C:\\Windows\\Sysnative\\dism.exe /online /get-featureinfo /featurename:recall", NULL, NULL, TRUE, 0, NULL, NULL, &si, &pi))
+                                {
+                                    puts("Error: CreateProcess Failed!");
+                                    printf("Error Code: %d\n", GetLastError());
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     // Close Child Process's STDOUT Write Handle
@@ -132,6 +150,9 @@ void GetWindowsRecallStatus() {
     // Check Windows Recall Status
     if (StrStrIA(outbuf, "State : Enabled") != NULL) {
         puts("State : Enabled");
+    }
+    else if (StrStrIA(outbuf, "State : Disabled with Payload Removed") != NULL) {
+        puts("State : Disabled with Payload Removed");
     }
     else if (StrStrIA(outbuf, "State : Disabled") != NULL) {
         puts("State : Disabled");
@@ -154,7 +175,7 @@ BOOL GetTrueWindowsVersion(OSVERSIONINFOEX* pOSversion) {
     NTSTATUS(WINAPI * pRtlGetVersion)(
         PRTL_OSVERSIONINFOW lpVersionInformation) = NULL;
     // Load The System-DLL
-    HINSTANCE hNTdllDll = LoadLibrary(L"ntdll.dll");
+    HINSTANCE hNTdllDll = LoadLibraryEx(L"ntdll.dll", NULL, LOAD_LIBRARY_SEARCH_SYSTEM32);
     // Successfully Loaded?
     if (hNTdllDll != NULL)
     {
@@ -195,11 +216,29 @@ void enable() {
     // Start The Child Process
     if (!CreateProcess(L"C:\\Windows\\System32\\dism.exe", L"C:\\Windows\\System32\\dism.exe /online /enable-feature /featurename:recall", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
     {
-        if (!CreateProcess(L"C:\\Windows\\Sysnative\\dism.exe", L"C:\\Windows\\Sysnative\\dism.exe /online /enable-feature /featurename:recall", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
+        if (!CreateProcess(L"C:\\Windows\\SysWOW64\\dism.exe", L"C:\\Windows\\SysWOW64\\dism.exe /online /enable-feature /featurename:recall", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
         {
-            puts("Error: CreateProcess Failed!");
-            printf("Error Code: %d\n", GetLastError());
-            return;
+            if (!CreateProcess(L"C:\\Windows\\SysArm32\\dism.exe", L"C:\\Windows\\SysArm32\\dism.exe /online /enable-feature /featurename:recall", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
+            {
+                if (!CreateProcess(L"C:\\Windows\\SysX8664\\dism.exe", L"C:\\Windows\\SysX8664\\dism.exe /online /enable-feature /featurename:recall", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
+                {
+                    if (!CreateProcess(L"C:\\Windows\\SysArm64\\dism.exe", L"C:\\Windows\\SysArm64\\dism.exe /online /enable-feature /featurename:recall", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
+                    {
+                        if (!CreateProcess(L"C:\\Windows\\SyChpe32\\dism.exe", L"C:\\Windows\\SyChpe32\\dism.exe /online /enable-feature /featurename:recall", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
+                        {
+                            if (!CreateProcess(L"C:\\Windows\\SyChpe64\\dism.exe", L"C:\\Windows\\SyChpe64\\dism.exe /online /enable-feature /featurename:recall", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
+                            {
+                                if (!CreateProcess(L"C:\\Windows\\Sysnative\\dism.exe", L"C:\\Windows\\Sysnative\\dism.exe /online /enable-feature /featurename:recall", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
+                                {
+                                    puts("Error: CreateProcess Failed!");
+                                    printf("Error Code: %d\n", GetLastError());
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     // Wait Until Child Process Exits
@@ -209,9 +248,9 @@ void enable() {
     CloseHandle(pi.hThread);
     puts("");
     puts("Windows Recall Status:");
-    puts("-------------------------------");
+    puts("---------------------------------------");
     GetWindowsRecallStatus();
-    puts("-------------------------------");
+    puts("---------------------------------------");
     puts("");
     reboot();
 }
@@ -230,11 +269,29 @@ void disable() {
     // Start The Child Process
     if (!CreateProcess(L"C:\\Windows\\System32\\dism.exe", L"C:\\Windows\\System32\\dism.exe /online /disable-feature /featurename:recall", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
     {
-        if (!CreateProcess(L"C:\\Windows\\Sysnative\\dism.exe", L"C:\\Windows\\Sysnative\\dism.exe /online /disable-feature /featurename:recall", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
+        if (!CreateProcess(L"C:\\Windows\\SysWOW64\\dism.exe", L"C:\\Windows\\SysWOW64\\dism.exe /online /disable-feature /featurename:recall", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
         {
-            puts("Error: CreateProcess Failed!");
-            printf("Error Code: %d\n", GetLastError());
-            return;
+            if (!CreateProcess(L"C:\\Windows\\SysArm32\\dism.exe", L"C:\\Windows\\SysArm32\\dism.exe /online /disable-feature /featurename:recall", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
+            {
+                if (!CreateProcess(L"C:\\Windows\\SysX8664\\dism.exe", L"C:\\Windows\\SysX8664\\dism.exe /online /disable-feature /featurename:recall", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
+                {
+                    if (!CreateProcess(L"C:\\Windows\\SysArm64\\dism.exe", L"C:\\Windows\\SysArm64\\dism.exe /online /disable-feature /featurename:recall", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
+                    {
+                        if (!CreateProcess(L"C:\\Windows\\SyChpe32\\dism.exe", L"C:\\Windows\\SyChpe32\\dism.exe /online /disable-feature /featurename:recall", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
+                        {
+                            if (!CreateProcess(L"C:\\Windows\\SyChpe64\\dism.exe", L"C:\\Windows\\SyChpe64\\dism.exe /online /disable-feature /featurename:recall", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
+                            {
+                                if (!CreateProcess(L"C:\\Windows\\Sysnative\\dism.exe", L"C:\\Windows\\Sysnative\\dism.exe /online /disable-feature /featurename:recall", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
+                                {
+                                    puts("Error: CreateProcess Failed!");
+                                    printf("Error Code: %d\n", GetLastError());
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     // Wait Until Child Process Exits
@@ -244,9 +301,9 @@ void disable() {
     CloseHandle(pi.hThread);
     puts("");
     puts("Windows Recall Status:");
-    puts("-------------------------------");
+    puts("---------------------------------------");
     GetWindowsRecallStatus();
-    puts("-------------------------------");
+    puts("---------------------------------------");
     puts("");
     reboot();
 }
@@ -275,9 +332,24 @@ void reboot() {
             {
                 if (!CreateProcess(L"C:\\Windows\\SysArm32\\shutdown.exe", L"C:\\Windows\\SysArm32\\shutdown.exe /r /t 10 /soft", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
                 {
-                    puts("Error: CreateProcess Failed!");
-                    printf("Error Code: %d\n", GetLastError());
-                    return;
+                    if (!CreateProcess(L"C:\\Windows\\SysX8664\\shutdown.exe", L"C:\\Windows\\SysX8664\\shutdown.exe /r /t 10 /soft", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
+                    {
+                        if (!CreateProcess(L"C:\\Windows\\SysArm64\\shutdown.exe", L"C:\\Windows\\SysArm64\\shutdown.exe /r /t 10 /soft", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
+                        {
+                            if (!CreateProcess(L"C:\\Windows\\SyChpe32\\shutdown.exe", L"C:\\Windows\\SyChpe32\\shutdown.exe /r /t 10 /soft", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
+                            {
+                                if (!CreateProcess(L"C:\\Windows\\SyChpe64\\shutdown.exe", L"C:\\Windows\\SyChpe64\\shutdown.exe /r /t 10 /soft", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
+                                {
+                                    if (!CreateProcess(L"C:\\Windows\\Sysnative\\shutdown.exe", L"C:\\Windows\\Sysnative\\shutdown.exe /r /t 10 /soft", NULL, NULL, FALSE, 0, NULL, NULL, &si, &pi))
+                                    {
+                                        puts("Error: CreateProcess Failed!");
+                                        printf("Error Code: %d\n", GetLastError());
+                                        return;
+                                    }
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -368,9 +440,9 @@ int main() {
         GetWindowsVersion();
         puts("");
         puts("Windows Recall Status:");
-        puts("-------------------------------");
+        puts("---------------------------------------");
         GetWindowsRecallStatus();
-        puts("-------------------------------");
+        puts("---------------------------------------");
         puts("");
         puts("  1 - Enable Windows Recall");
         puts("  2 - Disable Windows Recall");
