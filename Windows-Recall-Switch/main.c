@@ -151,6 +151,9 @@ void GetWindowsRecallStatus() {
     if (StrStrIA(outbuf, "State : Enabled") != NULL) {
         puts("State : Enabled");
     }
+    else if (StrStrIA(outbuf, "State : Disabled with Payload Removed") != NULL) {
+        puts("State : Disabled with Payload Removed");
+    }
     else if (StrStrIA(outbuf, "State : Disabled") != NULL) {
         puts("State : Disabled");
     }
