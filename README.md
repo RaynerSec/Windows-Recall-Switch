@@ -52,11 +52,25 @@ winget upgrade --id RaynerSec.Windows-Recall-Switch -e
 - Unzip Windows-Recall-Switch Portable Zip File
 - If Your Machine Architecture Is 32 Bit (x86) Then Run Windows-Recall-Switch-x86.exe
 - If Your Machine Architecture Is 64 Bit (x64) Then Run Windows-Recall-Switch-x64.exe
-- If Your Machine Architecture Is 32 Bit (Arm32) Then Run Windows-Recall-Switch-Arm32.exe
 - If Your Machine Architecture Is 64 Bit (Arm64) Then Run Windows-Recall-Switch-Arm64.exe
-- If Your Machine Architecture Is 64 Bit (Arm64) That Supports (Arm64EC) Then Run Windows-Recall-Switch-Arm64EC.exe
+- If Your Machine Architecture Is 64 Bit (Arm64) That Supports (Arm64EC And/Or Arm64X) Then Run Windows-Recall-Switch-Arm64EC-Arm64X.exe
 - Accept The UAC Prompt
 - Follow On Screen Usage And You're Done
+
+## Star History
+<a href="https://www.star-history.com/#rc-chuah/Windows-Recall-Switch&RaynerSec/Windows-Recall-Switch&Date">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=rc-chuah/Windows-Recall-Switch,RaynerSec/Windows-Recall-Switch&type=Date&theme=dark" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=rc-chuah/Windows-Recall-Switch,RaynerSec/Windows-Recall-Switch&type=Date" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=rc-chuah/Windows-Recall-Switch,RaynerSec/Windows-Recall-Switch&type=Date" />
+ </picture>
+</a>
+
+## Stargazers Over Time (Mirror 1)
+[![Stargazers Over Time](https://starchart.cc/rc-chuah/Windows-Recall-Switch.svg?variant=adaptive)](https://starchart.cc/rc-chuah/Windows-Recall-Switch)
+
+## Stargazers Over Time (Mirror 2)
+[![Stargazers Over Time](https://starchart.cc/RaynerSec/Windows-Recall-Switch.svg?variant=adaptive)](https://starchart.cc/RaynerSec/Windows-Recall-Switch)
 
 ## Special Thanks
 - Thanks To [Advanced Installer](https://www.advancedinstaller.com) For Providing A Professional License For Free For This Project.
