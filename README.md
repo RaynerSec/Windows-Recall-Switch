@@ -9,7 +9,7 @@ This Program Enables And Disables Microsoft Windows Recall Feature.
 
 <a href="https://opensourcemaintenancefee.org/"><img src="./assets/images/osmf/osmf-logo-square-dark.png" height="146" align="right" /></a>
 
-To Ensure The Long-Term Sustainability Of This Project, Use Of The Windows-Recall-Switch Requires An [Open Source Maintenance Fee](https://opensourcemaintenancefee.org). While The Source Code Is Freely Available Under The Terms Of The [LICENSE](./LICENSE), All Other Aspects Of The Project--Including Opening Or Commenting On Issues, Participating In Discussions And Downloading Releases--Require [Adherence To The Maintenance Fee](./OSMFEULA.txt).
+To Ensure The Long-Term Sustainability Of This Project, Use Of The Windows-Recall-Switch Requires An [Open Source Maintenance Fee](https://opensourcemaintenancefee.org). While The Source Code Is Freely Available Under The Terms Of The [LICENSE](./LICENSE.txt), All Other Aspects Of The Project--Including Opening Or Commenting On Issues, Participating In Discussions And Downloading Releases--Require [Adherence To The Maintenance Fee](./OSMFEULA.txt).
 
 In Short, If You Use This Project To Generate Revenue, The [Maintenance Fee Is Required](./OSMFEULA.txt).
 
@@ -67,7 +67,13 @@ winget upgrade --id RaynerSec.Windows-Recall-Switch -e
 - Accept The UAC Prompt
 - Follow On Screen Usage And You're Done
 
-## Star History (Mirror 1)
+## How Can I Support Windows-Recall-Switch? ❤️
+- ⭐ Star This Project! :)
+- 🤝 Sponsor This Project Through [GitHub Sponsors](https://github.com/sponsors/rc-chuah)
+- 🧑‍💻 Use Windows-Recall-Switch And [Create An Issue (Mirror 1)](https://github.com/rc-chuah/Windows-Recall-Switch/issues/new) For Feature Requests Or Bugs.
+- 🧑‍💻 Use Windows-Recall-Switch And [Create An Issue (Mirror 2)](https://github.com/RaynerSec/Windows-Recall-Switch/issues/new) For Feature Requests Or Bugs.
+
+## Star History (Mirror 1) ⭐
 <a href="https://www.star-history.com/#rc-chuah/Windows-Recall-Switch&Date">
  <picture>
    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=rc-chuah/Windows-Recall-Switch&type=Date&theme=dark" />
@@ -76,7 +82,7 @@ winget upgrade --id RaynerSec.Windows-Recall-Switch -e
  </picture>
 </a>
 
-## Star History (Mirror 2)
+## Star History (Mirror 2) ⭐
 <a href="https://www.star-history.com/#RaynerSec/Windows-Recall-Switch&Date">
  <picture>
    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=RaynerSec/Windows-Recall-Switch&type=Date&theme=dark" />
@@ -85,11 +91,19 @@ winget upgrade --id RaynerSec.Windows-Recall-Switch -e
  </picture>
 </a>
 
-## Stargazers Over Time (Mirror 1)
+## 🌟 Stargazers Over Time (Mirror 1) 👀
 [![Stargazers Over Time](https://starchart.cc/rc-chuah/Windows-Recall-Switch.svg?variant=adaptive)](https://starchart.cc/rc-chuah/Windows-Recall-Switch)
 
-## Stargazers Over Time (Mirror 2)
+## 🌟 Stargazers Over Time (Mirror 2) 👀
 [![Stargazers Over Time](https://starchart.cc/RaynerSec/Windows-Recall-Switch.svg?variant=adaptive)](https://starchart.cc/RaynerSec/Windows-Recall-Switch)
 
 ## Special Thanks
 - Thanks To [Advanced Installer](https://www.advancedinstaller.com) For Providing A Professional License For Free For This Project.
+
+## License
+
+[![GNU GPLv3 Logo](https://www.gnu.org/graphics/gplv3-or-later.png)](http://www.gnu.org/licenses/gpl-3.0.en.html)
+
+Windows-Recall-Switch Is Free Software: You Can Use, Study Share And Improve It At Your Will. Specifically You Can Redistribute And/Or
+Modify It Under The Terms Of The [GNU General Public License](http://www.gnu.org/licenses/gpl-3.0.en.html) As Published
+By The Free Software Foundation, Either Version 3 Of The License, Or (At Your Option) Any Later Version.
