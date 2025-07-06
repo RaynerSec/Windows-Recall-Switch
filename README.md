@@ -7,7 +7,7 @@ This Program Enables And Disables Microsoft Windows Recall Feature.
 
 ## Open Source Maintenance Fee
 
-<a href="https://opensourcemaintenancefee.org/"><img src="./assets/images/osmf/osmf-logo-wide-dark.png" height="146" align="center" /></a>
+<a href="https://opensourcemaintenancefee.org/"><img src="./assets/images/osmf/osmf-logo-wide-dark.png" height="1460" width="2360" align="center" /></a>
 
 To Ensure The Long-Term Sustainability Of This Project, Use Of The Windows-Recall-Switch Requires An [Open Source Maintenance Fee](https://opensourcemaintenancefee.org). While The Source Code Is Freely Available Under The Terms Of The [LICENSE](./LICENSE.txt), All Other Aspects Of The Project--Including Opening Or Commenting On Issues, Participating In Discussions And Downloading Releases--Require [Adherence To The Maintenance Fee](./OSMFEULA.txt).
 
