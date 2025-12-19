@@ -32,7 +32,7 @@ This Program Enables And Disables Microsoft Windows Recall Feature.
 ## Building
 ### Building Perquisites
 #### Visual Studio
-- Visual Studio 2022 Or Later
+- Visual Studio 2026 Or Later
 ### Building Windows-Recall-Switch
 #### Get The Source Code
 - Get The Source Code Either By Downloading Zip From Mirror 1 [Download Zip](https://github.com/rc-chuah/Windows-Recall-Switch/archive/main.zip) Or Do `git clone https://github.com/rc-chuah/Windows-Recall-Switch`
@@ -69,8 +69,8 @@ winget upgrade --id RaynerSec.Windows-Recall-Switch -e
 - Accept The UAC Prompt
 - Follow On Screen Instructions And You're Done
 #### How To Use Windows-Recall-Switch Portable Version
-- Download And Install The Latest Microsoft Visual C/C++ Redistributable 2015-2022 (x86/x64) (Required)
-- [Download 32 Bit (x86)](https://aka.ms/vs/17/release/vc_redist.x86.exe) | [Download 64 Bit (x64)](https://aka.ms/vs/17/release/vc_redist.x64.exe)
+- Download And Install The Latest Microsoft Visual C/C++ Redistributable 2015-2026 (x86/x64) (Required)
+- [Download 32 Bit (x86)](https://aka.ms/vs/18/release/vc_redist.x86.exe) | [Download 64 Bit (x64)](https://aka.ms/vs/18/release/vc_redist.x64.exe)
 - Download Windows-Recall-Switch Portable Zip File
 - [Download Mirror 1](https://github.com/rc-chuah/Windows-Recall-Switch/releases/latest) | [Download Mirror 2](https://github.com/RaynerSec/Windows-Recall-Switch/releases/latest)
 - Unzip Windows-Recall-Switch Portable Zip File
